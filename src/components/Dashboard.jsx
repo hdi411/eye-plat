@@ -29,48 +29,6 @@ export default function Dashboard({ onNavigate }) {
         </div>
       </div>
 
-      {/* 使用流程 ── 最上面 */}
-      <div className="section-label">使用流程</div>
-      <div className="steps-grid">
-        {[
-          { n:'01', l:'选择模块', d:'根据检查类型点击下方对应分析模块' },
-          { n:'02', l:'上传图像', d:'拖拽或选择检查图像文件' },
-          { n:'03', l:'AI 分析',  d:'深度学习模型自动推理识别' },
-          { n:'04', l:'查看结果', d:'获取分类结果与概率分布' },
-        ].map(s => (
-          <div key={s.n} className="step-card">
-            <div className="step-num">{s.n}</div>
-            <div className="step-label">{s.l}</div>
-            <div className="step-desc">{s.d}</div>
-          </div>
-        ))}
-      </div>
-
-      {/* 指标 */}
-      <div className="section-label" style={{marginTop:22}}>系统概览</div>
-      <div className="metrics-grid">
-        <div className="metric-card">
-          <div className="metric-label">✅ 可用模块</div>
-          <div className="metric-value acc">1</div>
-          <div className="metric-delta">视野缺损分类已就绪</div>
-        </div>
-        <div className="metric-card">
-          <div className="metric-label">🤖 AI 模型</div>
-          <div className="metric-value" style={{fontSize:18,paddingTop:4}}>ResNet-34</div>
-          <div className="metric-delta">+ CBAM 注意力机制</div>
-        </div>
-        <div className="metric-card">
-          <div className="metric-label">🏷️ 分类数量</div>
-          <div className="metric-value">6</div>
-          <div className="metric-delta">青光眼视野缺损类别</div>
-        </div>
-        <div className="metric-card">
-          <div className="metric-label">📊 本次会话</div>
-          <div className={`metric-value ${history.length > 0 ? 'acc' : ''}`}>{history.length}</div>
-          <div className="metric-delta">张图像已分析</div>
-        </div>
-      </div>
-
       {/* 检查模块 */}
       <div className="section-label">检查模块</div>
       <div className="module-grid">
